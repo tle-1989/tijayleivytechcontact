@@ -346,35 +346,27 @@ p {
 
 .initiative-card {
   margin-top: 35px;
+  max-width: 100%;
 
-  max-width: 760px;
+  background: var(--accent-dark);
+  color: #ffffff;
 
-  background: var(--surface);
+  border-radius: 28px;
 
-  border: 1px solid var(--line);
+  padding: 44px 48px;
 
-  border-left: 5px solid var(--accent);
-
-  border-radius: var(--radius);
-
-  padding: 34px;
-
-  box-shadow:
-    0 10px 30px rgba(20, 45, 38, 0.05);
+  box-shadow: var(--shadow);
 
   transition:
     transform 0.2s ease,
-    box-shadow 0.2s ease,
-    border-color 0.2s ease;
+    box-shadow 0.2s ease;
 }
 
 .initiative-card:hover {
   transform: translateY(-3px);
 
-  border-color: var(--accent);
-
   box-shadow:
-    0 18px 40px rgba(20, 45, 38, 0.09);
+    0 22px 50px rgba(20, 45, 38, 0.16);
 }
 
 .initiative-label {
@@ -382,7 +374,7 @@ p {
 
   margin-bottom: 10px;
 
-  color: var(--accent);
+  color: #b9ddd5;
 
   font-size: 0.78rem;
 
@@ -396,37 +388,46 @@ p {
 .initiative-card h3 {
   margin-top: 0;
 
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+
+  color: #ffffff;
 
   font-family: "Playfair Display", Georgia, serif;
 
-  font-size: 1.7rem;
+  font-size: 1.8rem;
 
   line-height: 1.25;
 }
 
 .initiative-card p {
-  max-width: 650px;
+  max-width: 700px;
 
-  margin-bottom: 22px;
+  margin-bottom: 24px;
 
-  color: var(--muted);
+  color: #d7e7e3;
 }
 
 .initiative-link {
   display: inline-block;
 
-  color: var(--accent);
+  color: #ffffff;
 
   font-weight: 700;
 
+  border-bottom: 2px solid #b9ddd5;
+
+  padding-bottom: 3px;
+
   transition:
     color 0.2s ease,
-    transform 0.2s ease;
+    transform 0.2s ease,
+    border-color 0.2s ease;
 }
 
 .initiative-link:hover {
-  color: var(--accent-dark);
+  color: #b9ddd5;
+
+  border-color: #ffffff;
 
   transform: translateX(4px);
 }
