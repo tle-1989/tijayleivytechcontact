@@ -63,16 +63,24 @@ a {
 
 .hero {
   position: relative;
-  min-height: 700px;
-  overflow: hidden;
+
+  min-height: 650px;
+
   display: flex;
   align-items: center;
+  justify-content: center;
+
+  gap: 55px;
+
+  padding: 70px 60px;
+
+  overflow: hidden;
 
   background:
     radial-gradient(
-      circle at 20% 50%,
+      circle at 25% 50%,
       rgba(0, 102, 72, 0.08),
-      transparent 32%
+      transparent 30%
     ),
     linear-gradient(
       110deg,
@@ -88,31 +96,31 @@ a {
    ========================================= */
 
 .mascot-container {
-  position: absolute;
-  left: 0;
-  bottom: 0;
+  position: relative;
 
-  width: 44%;
-  height: 100%;
+  flex: 0 0 auto;
+
+  width: 280px;
+  height: auto;
 
   display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
 
-  overflow: hidden;
+  overflow: visible;
+
   pointer-events: none;
 }
 
 .mascot {
   display: block;
 
-  height: 96%;
-  width: auto;
+  width: 100%;
+  height: auto;
 
-  max-width: none;
+  max-width: 280px;
 
   object-fit: contain;
-  object-position: left bottom;
 }
 
 
@@ -124,10 +132,11 @@ a {
   position: relative;
   z-index: 2;
 
-  width: 50%;
-  margin-left: 46%;
+  width: min(680px, 55vw);
 
-  padding: 70px 40px 70px 0;
+  margin: 0;
+
+  padding: 0;
 }
 
 .hero h1 {
@@ -135,20 +144,23 @@ a {
 
   font-family: "Playfair Display", Georgia, serif;
 
-  font-size: clamp(4rem, 6vw, 6.7rem);
+  font-size: clamp(4rem, 5.5vw, 6.3rem);
 
-  line-height: 0.94;
+  line-height: 0.95;
+
   letter-spacing: -0.045em;
 }
 
 .hero-description {
-  max-width: 680px;
+  max-width: 650px;
 
   margin: 0 0 30px;
 
   color: var(--muted);
 
   font-size: 1.08rem;
+
+  line-height: 1.65;
 }
 
 
@@ -200,7 +212,6 @@ a {
 
 .wrap {
   width: min(1080px, calc(100% - 48px));
-
   margin: 0 auto;
 }
 
@@ -319,27 +330,29 @@ footer {
 @media (max-width: 950px) {
 
   .hero {
-    min-height: 650px;
+    min-height: 600px;
+
+    gap: 35px;
+
+    padding: 60px 35px;
   }
 
   .mascot-container {
-    width: 42%;
+    width: 220px;
   }
 
   .mascot {
-    height: 88%;
+    width: 100%;
+
+    max-width: 220px;
   }
 
   .hero-copy {
-    width: 55%;
-
-    margin-left: 42%;
-
-    padding-right: 24px;
+    width: min(600px, 60vw);
   }
 
   .hero h1 {
-    font-size: clamp(3.2rem, 7vw, 5.2rem);
+    font-size: clamp(3.2rem, 6vw, 5rem);
   }
 
   .two {
@@ -349,6 +362,8 @@ footer {
   }
 
   .survey-card {
+    width: 100%;
+
     max-width: 520px;
 
     margin: 0 auto;
@@ -371,7 +386,11 @@ footer {
 
     flex-direction: column;
 
-    align-items: stretch;
+    align-items: flex-start;
+
+    justify-content: flex-start;
+
+    gap: 0;
 
     padding: 0;
 
@@ -388,9 +407,7 @@ footer {
 
     margin: 0;
 
-    padding: 48px 24px 24px;
-
-    text-align: left;
+    padding: 48px 24px 20px;
   }
 
   .hero-copy .label {
@@ -440,8 +457,7 @@ footer {
 
 
   /* =========================================
-     WOLF - MOBILE ONLY
-     20% WIDTH
+     WOLF - MOBILE
      ========================================= */
 
   .mascot-container {
@@ -449,50 +465,42 @@ footer {
 
     order: 2;
 
-    left: auto;
-    bottom: auto;
-
     width: 100%;
+
     height: auto;
 
-    min-height: 150px;
+    min-height: 130px;
 
     display: flex;
 
-    justify-content: flex-start;
-
     align-items: flex-end;
 
-    padding: 20px 24px 0;
+    justify-content: flex-start;
+
+    padding: 15px 24px 5px;
 
     overflow: visible;
-
-    pointer-events: none;
   }
 
   .mascot {
-    position: relative;
-
-    left: auto;
-    bottom: auto;
-
     display: block;
 
     width: 20%;
+
     height: auto;
 
     max-width: none;
 
     object-fit: contain;
-
-    object-position: left bottom;
   }
 
 
-  /* COMPETITION SECTION */
+  /* =========================================
+     COMPETITION SECTION
+     ========================================= */
 
   .competition-section {
-    padding: 50px 0 65px;
+    padding: 48px 0 65px;
   }
 
   .wrap {
@@ -530,7 +538,9 @@ footer {
   }
 
 
-  /* SURVEY / QR CARD */
+  /* =========================================
+     SURVEY / QR CARD
+     ========================================= */
 
   .survey-card {
     width: 100%;
@@ -565,7 +575,9 @@ footer {
   }
 
 
-  /* FOOTER */
+  /* =========================================
+     FOOTER
+     ========================================= */
 
   footer {
     padding: 26px 20px 34px;
@@ -584,7 +596,7 @@ footer {
 @media (max-width: 430px) {
 
   .hero-copy {
-    padding: 40px 20px 22px;
+    padding: 40px 20px 18px;
   }
 
   .hero h1 {
@@ -596,12 +608,9 @@ footer {
   }
 
   .mascot-container {
-    min-height: 130px;
+    min-height: 115px;
 
-    padding:
-      16px
-      20px
-      0;
+    padding: 12px 20px 5px;
   }
 
   .mascot {
@@ -609,7 +618,7 @@ footer {
   }
 
   .competition-section {
-    padding: 45px 0 55px;
+    padding: 42px 0 55px;
   }
 
   .wrap {
