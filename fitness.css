@@ -1,5 +1,10 @@
 /* =========================================
-   BASE
+   FITNESS COMPETITION PAGE
+   ========================================= */
+
+
+/* =========================================
+   COLORS
    ========================================= */
 
 :root {
@@ -12,6 +17,11 @@
   --line: #dbe5e0;
 }
 
+
+/* =========================================
+   GLOBAL
+   ========================================= */
+
 * {
   box-sizing: border-box;
 }
@@ -22,9 +32,16 @@ html {
 
 body {
   margin: 0;
+
   background: var(--background);
+
   color: var(--text);
-  font-family: "Inter", Arial, sans-serif;
+
+  font-family:
+    "Inter",
+    Arial,
+    sans-serif;
+
   line-height: 1.65;
 }
 
@@ -32,12 +49,22 @@ a {
   color: inherit;
 }
 
+
+/* =========================================
+   SMALL GREEN LABELS
+   ========================================= */
+
 .label {
   margin: 0 0 18px;
+
   color: var(--green);
+
   font-size: 0.82rem;
+
   font-weight: 800;
+
   letter-spacing: 0.16em;
+
   text-transform: uppercase;
 }
 
@@ -48,97 +75,171 @@ a {
 
 .hero {
   position: relative;
-  min-height: 710px;
+
+  min-height: 700px;
+
   overflow: hidden;
 
   display: flex;
+
   align-items: center;
 
   background:
-    radial-gradient(circle at 20% 50%, rgba(0, 102, 72, 0.08), transparent 32%),
-    linear-gradient(110deg, #f3faf6 0%, #fbfcfb 54%, #eef7f3 100%);
+    radial-gradient(
+      circle at 20% 50%,
+      rgba(0, 102, 72, 0.08),
+      transparent 32%
+    ),
+    linear-gradient(
+      110deg,
+      #f3faf6 0%,
+      #fbfcfb 55%,
+      #eef7f3 100%
+    );
 }
 
-/*
-  The mascot image itself contains the wolf.
-  This window crops the LEFT portion of the image away so the page displays
-  the RIGHT HALF of the wolf near the headline.
-*/
-.mascot-window {
+
+/* =========================================
+   WOLF MASCOT
+   ========================================= */
+
+.mascot-container {
   position: absolute;
+
   left: 0;
+
   bottom: 0;
 
-  width: 42%;
+  width: 44%;
+
   height: 100%;
 
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: flex-start;
+
   overflow: hidden;
+
   pointer-events: none;
 }
 
 .mascot {
-  position: absolute;
+  display: block;
 
-  /* Shift the full image left so only its right half remains visible. */
-  left: -43%;
-  bottom: -2%;
+  height: 96%;
 
-  width: 145%;
-  height: 105%;
+  width: auto;
+
+  max-width: none;
 
   object-fit: contain;
-  object-position: center bottom;
+
+  object-position: left bottom;
 }
+
+
+/* =========================================
+   HERO TEXT
+   ========================================= */
 
 .hero-copy {
   position: relative;
+
   z-index: 2;
 
-  width: min(760px, 48vw);
+  width: 50%;
 
-  margin-left: 49%;
-  padding: 70px 42px 70px 0;
+  margin-left: 46%;
+
+  padding:
+    70px
+    40px
+    70px
+    0;
 }
 
 .hero h1 {
-  margin: 0 0 24px;
+  margin:
+    0
+    0
+    25px;
 
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(4rem, 6.1vw, 7rem);
-  line-height: 0.96;
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      4rem,
+      6vw,
+      6.7rem
+    );
+
+  line-height: 0.94;
+
   letter-spacing: -0.045em;
 }
 
 .hero-description {
   max-width: 680px;
 
-  margin: 0 0 30px;
+  margin:
+    0
+    0
+    30px;
 
   color: var(--muted);
+
   font-size: 1.08rem;
 }
+
+
+/* =========================================
+   SURVEY BUTTON
+   ========================================= */
 
 .btn {
   display: inline-block;
 
-  padding: 15px 26px;
+  padding:
+    15px
+    28px;
 
   border-radius: 999px;
 
   background: var(--green);
+
   color: #ffffff;
 
   font-weight: 800;
+
   text-decoration: none;
+
+  box-shadow:
+    0
+    10px
+    25px
+    rgba(0, 79, 59, 0.12);
 
   transition:
     transform 0.2s ease,
-    background 0.2s ease;
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .btn:hover {
   transform: translateY(-2px);
+
   background: var(--green-dark);
+
+  box-shadow:
+    0
+    14px
+    30px
+    rgba(0, 79, 59, 0.18);
 }
 
 
@@ -147,33 +248,72 @@ a {
    ========================================= */
 
 .competition-section {
-  padding: 82px 0 88px;
+  padding:
+    80px
+    0
+    85px;
 }
 
 .wrap {
-  width: min(1080px, calc(100% - 48px));
+  width:
+    min(
+      1080px,
+      calc(100% - 48px)
+    );
+
   margin: 0 auto;
 }
 
 .two {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.65fr);
-  gap: 64px;
+
+  grid-template-columns:
+    minmax(0, 1.3fr)
+    minmax(300px, 0.7fr);
+
+  gap: 70px;
+
   align-items: center;
 }
 
-.competition-copy h2 {
-  margin: 0 0 24px;
 
-  font-family: "Playfair Display", Georgia, serif;
-  font-size: clamp(2.4rem, 4.5vw, 4rem);
-  line-height: 1.05;
+/* =========================================
+   COMPETITION TEXT
+   ========================================= */
+
+.competition-copy h2 {
+  margin:
+    0
+    0
+    28px;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      2.7rem,
+      4.5vw,
+      4.3rem
+    );
+
+  line-height: 1;
+
   letter-spacing: -0.035em;
 }
 
 .competition-copy p:not(.label) {
-  max-width: 700px;
+  max-width: 680px;
+
   color: var(--muted);
+
+  font-size: 1rem;
+}
+
+.competition-copy strong {
+  color: var(--text);
 }
 
 
@@ -186,31 +326,58 @@ a {
 
   background: var(--surface);
 
-  border: 1px solid var(--line);
+  border:
+    1px
+    solid
+    var(--line);
+
   border-radius: 24px;
 
-  box-shadow: 0 18px 50px rgba(16, 55, 43, 0.08);
+  box-shadow:
+    0
+    18px
+    50px
+    rgba(16, 55, 43, 0.08);
 }
 
 .survey-card img {
   display: block;
+
   width: 100%;
+
+  height: auto;
+
   border-radius: 16px;
 }
 
 .survey-card h3 {
-  margin: 22px 0 8px;
+  margin:
+    22px
+    0
+    8px;
+
+  color: var(--text);
+
   font-size: 1.3rem;
 }
 
 .survey-card p {
-  margin: 0 0 14px;
+  margin:
+    0
+    0
+    14px;
+
   color: var(--muted);
 }
 
 .survey-card a {
   color: var(--green);
+
   font-weight: 800;
+
+  text-decoration-thickness: 1px;
+
+  text-underline-offset: 3px;
 }
 
 
@@ -219,99 +386,358 @@ a {
    ========================================= */
 
 footer {
-  padding: 30px 24px 40px;
+  padding:
+    30px
+    24px
+    40px;
 
   color: var(--muted);
 
   text-align: center;
+
   font-size: 0.88rem;
 }
 
 
 /* =========================================
-   RESPONSIVE
+   TABLET
    ========================================= */
 
 @media (max-width: 950px) {
 
   .hero {
-    min-height: 640px;
+    min-height: 650px;
   }
 
-  .mascot-window {
-    width: 43%;
+  .mascot-container {
+    width: 42%;
   }
 
   .mascot {
-    left: -52%;
-    width: 165%;
+    height: 88%;
   }
 
   .hero-copy {
     width: 55%;
-    margin-left: 43%;
+
+    margin-left: 42%;
+
     padding-right: 24px;
   }
 
   .hero h1 {
-    font-size: clamp(3.3rem, 7vw, 5.5rem);
+    font-size:
+      clamp(
+        3.2rem,
+        7vw,
+        5.2rem
+      );
   }
 
   .two {
     grid-template-columns: 1fr;
+
     gap: 45px;
   }
 
   .survey-card {
     max-width: 520px;
+
+    margin: 0 auto;
   }
+
 }
 
 
+/* =========================================
+   MOBILE
+   ========================================= */
+
 @media (max-width: 700px) {
 
+  /* -----------------------------------------
+     HERO
+     ----------------------------------------- */
+
   .hero {
-    min-height: 720px;
-    align-items: flex-start;
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: stretch;
+
+    padding: 0;
+
+    overflow: hidden;
   }
 
-  .mascot-window {
-    top: auto;
-    bottom: 0;
 
-    width: 48%;
-    height: 56%;
-  }
-
-  .mascot {
-    left: -52%;
-    bottom: -2%;
-
-    width: 175%;
-    height: 110%;
-  }
+  /* -----------------------------------------
+     HERO TEXT
+     ----------------------------------------- */
 
   .hero-copy {
-    width: auto;
+    order: 1;
 
-    margin-left: 0;
+    width: 100%;
 
-    padding: 64px 24px 300px;
+    margin: 0;
+
+    padding:
+      48px
+      24px
+      25px;
+
+    text-align: left;
+  }
+
+  .hero-copy .label {
+    margin-bottom: 14px;
+
+    font-size: 0.68rem;
+
+    line-height: 1.5;
+
+    letter-spacing: 0.13em;
   }
 
   .hero h1 {
-    font-size: clamp(3.1rem, 14vw, 4.8rem);
+    margin-bottom: 20px;
+
+    font-size:
+      clamp(
+        3rem,
+        14vw,
+        4.4rem
+      );
+
+    line-height: 0.95;
+
+    letter-spacing: -0.04em;
   }
 
   .hero-description {
-    max-width: 520px;
+    max-width: 100%;
+
+    margin-bottom: 24px;
+
+    font-size: 1rem;
+
+    line-height: 1.6;
   }
 
+
+  /* -----------------------------------------
+     SURVEY BUTTON
+     ----------------------------------------- */
+
+  .btn {
+    display: block;
+
+    width: 100%;
+
+    max-width: 400px;
+
+    padding:
+      15px
+      20px;
+
+    text-align: center;
+  }
+
+
+  /* -----------------------------------------
+     WOLF
+     ----------------------------------------- */
+
+  .mascot-container {
+    position: relative;
+
+    order: 2;
+
+    left: auto;
+
+    bottom: auto;
+
+    width: 100%;
+
+    height: 360px;
+
+    display: flex;
+
+    justify-content: flex-start;
+
+    align-items: flex-end;
+
+    overflow: hidden;
+  }
+
+  .mascot {
+    position: relative;
+
+    left: auto;
+
+    bottom: auto;
+
+    display: block;
+
+    width: auto;
+
+    height: 100%;
+
+    max-width: none;
+
+    object-fit: contain;
+
+    object-position: left bottom;
+  }
+
+
+  /* -----------------------------------------
+     COMPETITION SECTION
+     ----------------------------------------- */
+
   .competition-section {
-    padding: 64px 0;
+    padding:
+      55px
+      0
+      65px;
   }
 
   .wrap {
-    width: min(100% - 32px, 1080px);
+    width: calc(100% - 40px);
   }
+
+  .two {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 40px;
+  }
+
+  .competition-copy {
+    width: 100%;
+  }
+
+  .competition-copy .label {
+    margin-bottom: 12px;
+  }
+
+  .competition-copy h2 {
+    margin-bottom: 24px;
+
+    font-size: 2.8rem;
+
+    line-height: 1;
+  }
+
+  .competition-copy p:not(.label) {
+    font-size: 1rem;
+
+    line-height: 1.65;
+  }
+
+
+  /* -----------------------------------------
+     QR / SURVEY CARD
+     ----------------------------------------- */
+
+  .survey-card {
+    width: 100%;
+
+    max-width: 420px;
+
+    margin: 0 auto;
+
+    padding: 20px;
+
+    border-radius: 20px;
+  }
+
+  .survey-card img {
+    width: 100%;
+
+    height: auto;
+
+    border-radius: 14px;
+  }
+
+  .survey-card h3 {
+    margin-top: 20px;
+
+    font-size: 1.25rem;
+  }
+
+  .survey-card a {
+    display: block;
+
+    overflow-wrap: anywhere;
+  }
+
+
+  /* -----------------------------------------
+     FOOTER
+     ----------------------------------------- */
+
+  footer {
+    padding:
+      26px
+      20px
+      34px;
+
+    font-size: 0.8rem;
+
+    line-height: 1.5;
+  }
+
+}
+
+
+/* =========================================
+   EXTRA SMALL PHONES
+   ========================================= */
+
+@media (max-width: 430px) {
+
+  .hero-copy {
+    padding:
+      40px
+      20px
+      22px;
+  }
+
+  .hero h1 {
+    font-size: 3.15rem;
+  }
+
+  .hero-description {
+    font-size: 0.95rem;
+  }
+
+  .mascot-container {
+    height: 320px;
+  }
+
+  .competition-section {
+    padding:
+      48px
+      0
+      55px;
+  }
+
+  .wrap {
+    width: calc(100% - 32px);
+  }
+
+  .competition-copy h2 {
+    font-size: 2.45rem;
+  }
+
+  .survey-card {
+    padding: 16px;
+  }
+
 }
