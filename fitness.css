@@ -652,3 +652,282 @@ footer {
   }
 
 }
+/* =========================================
+   COMPETITION DIRECTOR SECTION
+   ========================================= */
+
+.director-section {
+  padding: 75px 24px;
+
+  background: var(--green-dark);
+
+  color: #ffffff;
+}
+
+
+.director-wrap {
+  width: min(900px, 100%);
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 50px;
+}
+
+
+/* =========================================
+   DIRECTOR PHOTO
+   ========================================= */
+
+.director-photo {
+  flex: 0 0 180px;
+}
+
+
+.director-photo img {
+  display: block;
+
+  width: 180px;
+
+  height: 180px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border: 5px solid rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0
+    15px
+    35px
+    rgba(0, 0, 0, 0.18);
+}
+
+
+/* =========================================
+   DIRECTOR INFORMATION
+   ========================================= */
+
+.director-info {
+  padding-left: 48px;
+
+  border-left:
+    2px
+    solid
+    rgba(255, 255, 255, 0.25);
+}
+
+
+.director-label {
+  margin: 0 0 8px;
+
+  color: #b9ddd5;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+}
+
+
+.director-info h2 {
+  margin: 0 0 28px;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      2.8rem,
+      5vw,
+      4rem
+    );
+
+  line-height: 1;
+}
+
+
+/* =========================================
+   DIRECTOR CONTACT INFORMATION
+   ========================================= */
+
+.director-contact {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+}
+
+
+.director-contact-item {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+
+
+.director-contact-item:hover {
+  transform: translateX(4px);
+
+  opacity: 0.85;
+}
+
+
+/* =========================================
+   CONTACT ICONS
+   ========================================= */
+
+.contact-icon {
+  width: 46px;
+
+  height: 46px;
+
+  flex: 0 0 46px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: var(--green-dark);
+
+  font-size: 1.25rem;
+
+  font-weight: 700;
+}
+
+
+.director-contact-item span:last-child {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.director-contact-item small {
+  margin-bottom: 1px;
+
+  color: #b9ddd5;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+}
+
+
+.director-contact-item strong {
+  color: #ffffff;
+
+  font-size: 1.15rem;
+
+  font-weight: 700;
+}
+
+
+/* =========================================
+   COMPETITION DIRECTOR - MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .director-section {
+    padding:
+      55px
+      24px;
+  }
+
+
+  .director-wrap {
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 28px;
+
+    text-align: center;
+  }
+
+
+  .director-photo {
+    flex: none;
+  }
+
+
+  .director-photo img {
+    width: 145px;
+
+    height: 145px;
+  }
+
+
+  .director-info {
+    width: 100%;
+
+    padding:
+      28px
+      0
+      0;
+
+    border-left: none;
+
+    border-top:
+      2px
+      solid
+      rgba(255, 255, 255, 0.25);
+  }
+
+
+  .director-info h2 {
+    margin-bottom: 28px;
+
+    font-size: 2.7rem;
+  }
+
+
+  .director-contact {
+    width: fit-content;
+
+    margin: 0 auto;
+
+    text-align: left;
+  }
+
+
+  .director-contact-item strong {
+    font-size: 1rem;
+  }
+
+}
