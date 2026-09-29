@@ -1,0 +1,967 @@
+/* =========================================
+   COLORS
+   ========================================= */
+
+:root {
+
+  --background: #f7faf8;
+
+  --surface: #ffffff;
+
+  --text: #16241f;
+
+  --muted: #65716c;
+
+  --green: #006648;
+
+  --green-dark: #004f3b;
+
+  --line: #dbe5e0;
+
+}
+
+
+/* =========================================
+   GLOBAL
+   ========================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+body {
+
+  margin: 0;
+
+  background: var(--background);
+
+  color: var(--text);
+
+  font-family:
+    "Inter",
+    Arial,
+    sans-serif;
+
+  line-height: 1.65;
+
+}
+
+
+a {
+  color: inherit;
+}
+
+
+/* =========================================
+   SMALL GREEN LABELS
+   ========================================= */
+
+.label {
+
+  margin: 0 0 18px;
+
+  color: var(--green);
+
+  font-size: 0.82rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+}
+
+
+/* =========================================
+   PAGE HERO
+   ========================================= */
+
+.events-hero {
+
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    90px
+    24px
+    95px;
+
+  background:
+
+    radial-gradient(
+      circle at 15% 50%,
+      rgba(0, 102, 72, 0.09),
+      transparent 35%
+    ),
+
+    linear-gradient(
+      110deg,
+      #f3faf6 0%,
+      #fbfcfb 55%,
+      #eef7f3 100%
+    );
+
+}
+
+
+.events-hero-content {
+
+  width: min(1080px, 100%);
+
+  margin: 0 auto;
+
+}
+
+
+.back-link {
+
+  display: inline-block;
+
+  margin-bottom: 55px;
+
+  color: var(--green);
+
+  font-size: 0.9rem;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+
+}
+
+
+.back-link:hover {
+
+  transform: translateX(-4px);
+
+  color: var(--green-dark);
+
+}
+
+
+.events-hero h1 {
+
+  max-width: 850px;
+
+  margin:
+    0
+    0
+    30px;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      4rem,
+      7vw,
+      7rem
+    );
+
+  line-height: 0.94;
+
+  letter-spacing: -0.045em;
+
+}
+
+
+.hero-description {
+
+  max-width: 720px;
+
+  margin:
+    0
+    0
+    20px;
+
+  color: var(--text);
+
+  font-size: 1.18rem;
+
+  font-weight: 600;
+
+}
+
+
+.hero-note {
+
+  max-width: 720px;
+
+  margin: 0;
+
+  padding-left: 20px;
+
+  border-left:
+    4px
+    solid
+    var(--green);
+
+  color: var(--muted);
+
+  font-size: 0.95rem;
+
+}
+
+
+/* =========================================
+   EVENTS LIST
+   ========================================= */
+
+.events-list {
+
+  width: min(1180px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  padding:
+    100px
+    0;
+
+}
+
+
+/* =========================================
+   INDIVIDUAL EVENT
+   ========================================= */
+
+.event {
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1fr)
+    minmax(0, 1fr);
+
+  gap: 80px;
+
+  align-items: center;
+
+  padding:
+    70px
+    0;
+
+  border-bottom:
+    1px
+    solid
+    var(--line);
+
+}
+
+
+/* Remove border from final event */
+
+.event:last-child {
+
+  border-bottom: none;
+
+}
+
+
+/* =========================================
+   ALTERNATING LAYOUT
+   ========================================= */
+
+/*
+   Odd events:
+   IMAGE LEFT
+   TEXT RIGHT
+*/
+
+.event:nth-child(odd) .event-image {
+
+  order: 1;
+
+}
+
+
+.event:nth-child(odd) .event-content {
+
+  order: 2;
+
+}
+
+
+/*
+   Even events:
+   TEXT LEFT
+   IMAGE RIGHT
+*/
+
+.event:nth-child(even) .event-image {
+
+  order: 2;
+
+}
+
+
+.event:nth-child(even) .event-content {
+
+  order: 1;
+
+}
+
+
+/* =========================================
+   EVENT IMAGES
+   ========================================= */
+
+.event-image {
+
+  position: relative;
+
+}
+
+
+.event-image img {
+
+  display: block;
+
+  width: 100%;
+
+  aspect-ratio: 4 / 3;
+
+  object-fit: cover;
+
+  object-position: center;
+
+  border-radius: 24px;
+
+  box-shadow:
+    0
+    20px
+    50px
+    rgba(16, 55, 43, 0.12);
+
+}
+
+
+/* Small decorative accent */
+
+.event-image::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 90px;
+
+  height: 7px;
+
+  bottom: -3px;
+
+  left: 35px;
+
+  border-radius: 999px;
+
+  background: var(--green);
+
+}
+
+
+/* Move accent on alternating events */
+
+.event:nth-child(even) .event-image::after {
+
+  left: auto;
+
+  right: 35px;
+
+}
+
+
+/* =========================================
+   EVENT TEXT
+   ========================================= */
+
+.event-content {
+
+  max-width: 500px;
+
+}
+
+
+/* Push odd text slightly toward image */
+
+.event:nth-child(odd) .event-content {
+
+  justify-self: start;
+
+}
+
+
+/* Push even text slightly toward image */
+
+.event:nth-child(even) .event-content {
+
+  justify-self: end;
+
+}
+
+
+.event-number {
+
+  margin:
+    0
+    0
+    12px;
+
+  color: var(--green);
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+}
+
+
+.event-content h2 {
+
+  margin:
+    0
+    0
+    22px;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      2.8rem,
+      5vw,
+      4.5rem
+    );
+
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+
+}
+
+
+.event-content > p:not(.event-number) {
+
+  margin:
+    0
+    0
+    24px;
+
+  color: var(--muted);
+
+  font-size: 1.05rem;
+
+}
+
+
+/* =========================================
+   EVENT DETAILS
+   ========================================= */
+
+.event-details {
+
+  margin-top: 28px;
+
+  padding:
+    22px
+    24px;
+
+  background: #eef5f1;
+
+  border-left:
+    4px
+    solid
+    var(--green);
+
+  border-radius:
+    0
+    14px
+    14px
+    0;
+
+}
+
+
+.event-details p {
+
+  margin:
+    0
+    0
+    12px;
+
+  color: var(--muted);
+
+  font-size: 0.92rem;
+
+}
+
+
+.event-details p:last-child {
+
+  margin-bottom: 0;
+
+}
+
+
+.event-details strong {
+
+  color: var(--text);
+
+}
+
+
+/* =========================================
+   BOTTOM CALL TO ACTION
+   ========================================= */
+
+.events-cta {
+
+  padding:
+    90px
+    24px;
+
+  background: var(--green-dark);
+
+  color: #ffffff;
+
+  text-align: center;
+
+}
+
+
+.events-cta-content {
+
+  width: min(750px, 100%);
+
+  margin: 0 auto;
+
+}
+
+
+.events-cta .label {
+
+  color: #b9ddd5;
+
+}
+
+
+.events-cta h2 {
+
+  margin:
+    0
+    0
+    20px;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      2.8rem,
+      5vw,
+      4.5rem
+    );
+
+  line-height: 1;
+
+  letter-spacing: -0.035em;
+
+}
+
+
+.events-cta p:not(.label) {
+
+  max-width: 620px;
+
+  margin:
+    0
+    auto
+    30px;
+
+  color: #d7e7e1;
+
+  font-size: 1.05rem;
+
+}
+
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+.btn {
+
+  display: inline-block;
+
+  padding:
+    15px
+    28px;
+
+  border-radius: 999px;
+
+  background: #ffffff;
+
+  color: var(--green-dark);
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  box-shadow:
+    0
+    10px
+    25px
+    rgba(0, 0, 0, 0.12);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+}
+
+
+.btn:hover {
+
+  transform: translateY(-2px);
+
+  box-shadow:
+    0
+    14px
+    30px
+    rgba(0, 0, 0, 0.18);
+
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+
+  padding:
+    35px
+    24px
+    40px;
+
+  color: var(--muted);
+
+  text-align: center;
+
+  font-size: 0.88rem;
+
+}
+
+
+footer a {
+
+  display: inline-block;
+
+  margin-bottom: 8px;
+
+  color: var(--green);
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+}
+
+
+footer a:hover {
+
+  text-decoration: underline;
+
+  text-underline-offset: 3px;
+
+}
+
+
+footer p {
+
+  margin: 0;
+
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 950px) {
+
+  .events-hero {
+
+    padding:
+      70px
+      24px
+      75px;
+
+  }
+
+
+  .back-link {
+
+    margin-bottom: 40px;
+
+  }
+
+
+  .events-hero h1 {
+
+    font-size:
+      clamp(
+        3.5rem,
+        8vw,
+        5.5rem
+      );
+
+  }
+
+
+  .events-list {
+
+    padding:
+      60px
+      0;
+
+  }
+
+
+  .event {
+
+    gap: 45px;
+
+    padding:
+      55px
+      0;
+
+  }
+
+
+  .event-content h2 {
+
+    font-size:
+      clamp(
+        2.4rem,
+        5vw,
+        3.5rem
+      );
+
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .events-hero {
+
+    padding:
+      45px
+      20px
+      60px;
+
+  }
+
+
+  .back-link {
+
+    margin-bottom: 38px;
+
+  }
+
+
+  .events-hero h1 {
+
+    font-size:
+      clamp(
+        3rem,
+        13vw,
+        4.5rem
+      );
+
+  }
+
+
+  .hero-description {
+
+    font-size: 1.05rem;
+
+  }
+
+
+  .hero-note {
+
+    padding-left: 16px;
+
+  }
+
+
+  /* EVENTS */
+
+  .events-list {
+
+    width:
+      min(
+        100% - 32px,
+        1180px
+      );
+
+    padding:
+      30px
+      0
+      55px;
+
+  }
+
+
+  .event {
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    padding:
+      45px
+      0;
+
+  }
+
+
+  /*
+     On mobile every event becomes:
+     IMAGE
+     TEXT
+  */
+
+  .event:nth-child(odd) .event-image,
+  .event:nth-child(even) .event-image {
+
+    order: 1;
+
+  }
+
+
+  .event:nth-child(odd) .event-content,
+  .event:nth-child(even) .event-content {
+
+    order: 2;
+
+    justify-self: stretch;
+
+  }
+
+
+  .event-image img {
+
+    aspect-ratio: 4 / 3;
+
+    border-radius: 18px;
+
+  }
+
+
+  .event-image::after {
+
+    width: 70px;
+
+    left: 25px;
+
+  }
+
+
+  .event:nth-child(even) .event-image::after {
+
+    left: 25px;
+
+    right: auto;
+
+  }
+
+
+  .event-content {
+
+    max-width: none;
+
+  }
+
+
+  .event-content h2 {
+
+    font-size: 2.7rem;
+
+  }
+
+
+  .event-content > p:not(.event-number) {
+
+    font-size: 1rem;
+
+  }
+
+
+  .event-details {
+
+    margin-top: 24px;
+
+    padding:
+      19px
+      20px;
+
+  }
+
+
+  /* CTA */
+
+  .events-cta {
+
+    padding:
+      65px
+      24px;
+
+  }
+
+
+  .events-cta h2 {
+
+    font-size: 2.8rem;
+
+  }
+
+
+  .events-cta .btn {
+
+    width: 100%;
+
+    max-width: 400px;
+
+  }
+
+}
