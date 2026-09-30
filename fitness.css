@@ -1134,7 +1134,7 @@ footer {
 
   height: 72px;
 
-  padding: 0;
+  padding: 10px;
 
   display: flex;
 
@@ -1143,6 +1143,8 @@ footer {
   justify-content: center;
 
   background: #ffffff;
+
+  border-radius: 10px;
 
 }
 
