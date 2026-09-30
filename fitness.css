@@ -917,7 +917,7 @@ footer {
 
   border-radius: 50%;
 
-  background: #ffffff;
+  background: transparent;
 
   color: var(--green-dark);
 
