@@ -721,18 +721,232 @@ footer {
    ========================================= */
 
 .director-section {
-  padding: 75px 24px;
+
+  padding:
+    75px
+    24px;
 
   background: var(--green-dark);
 
   color: #ffffff;
+
 }
 
 
 .director-wrap {
-  width: min(900px, 100%);
+
+  width: min(1200px, 100%);
 
   margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    1fr
+    1fr;
+
+  gap: 0;
+
+  align-items: start;
+
+}
+
+
+/* =========================================
+   COLUMNS
+   ========================================= */
+
+.director-column {
+
+  min-width: 0;
+
+  padding:
+    10px
+    45px;
+
+}
+
+
+.director-column:first-child {
+
+  padding-left: 0;
+
+}
+
+
+.director-column:last-child {
+
+  padding-right: 0;
+
+}
+
+
+.director-column + .director-column {
+
+  border-left:
+    1px
+    solid
+    rgba(255, 255, 255, 0.22);
+
+}
+
+
+/* =========================================
+   DIRECTOR PROFILE
+   ========================================= */
+
+.director-profile {
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+
+}
+
+
+.director-photo {
+
+  margin-bottom: 28px;
+
+}
+
+
+.director-photo img {
+
+  display: block;
+
+  width: 160px;
+
+  height: 160px;
+
+  object-fit: cover;
+
+  border-radius: 50%;
+
+  border:
+    5px
+    solid
+    rgba(255, 255, 255, 0.18);
+
+  box-shadow:
+    0
+    15px
+    35px
+    rgba(0, 0, 0, 0.18);
+
+}
+
+
+/* =========================================
+   SECTION LABELS
+   ========================================= */
+
+.director-label {
+
+  margin:
+    0
+    0
+    12px;
+
+  color: #b9ddd5;
+
+  font-size: 0.78rem;
+
+  font-weight: 800;
+
+  letter-spacing: 0.18em;
+
+  text-transform: uppercase;
+
+}
+
+
+/* =========================================
+   DIRECTOR NAME
+   ========================================= */
+
+.director-info h2 {
+
+  margin:
+    0
+    0
+    28px;
+
+  color: #ffffff;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-size:
+    clamp(
+      2.6rem,
+      4vw,
+      3.7rem
+    );
+
+  line-height: 1;
+
+}
+
+
+/* =========================================
+   CONTACT INFORMATION
+   ========================================= */
+
+.director-contact {
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 16px;
+
+}
+
+
+.director-contact-item {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 13px;
+
+  color: #ffffff;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    opacity 0.2s ease;
+
+}
+
+
+.director-contact-item:hover {
+
+  transform: translateX(4px);
+
+  opacity: 0.85;
+
+}
+
+
+.contact-icon {
+
+  width: 42px;
+
+  height: 42px;
+
+  flex:
+    0
+    0
+    42px;
 
   display: flex;
 
@@ -740,7 +954,360 @@ footer {
 
   justify-content: center;
 
-  gap: 50px;
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  color: var(--green-dark);
+
+  font-size: 1.1rem;
+
+  font-weight: 700;
+
+}
+
+
+.director-contact-item span:last-child {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.director-contact-item small {
+
+  margin-bottom: 1px;
+
+  color: #b9ddd5;
+
+  font-size: 0.65rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.1em;
+
+  text-transform: uppercase;
+
+}
+
+
+.director-contact-item strong {
+
+  color: #ffffff;
+
+  font-size: 0.95rem;
+
+  font-weight: 700;
+
+}
+
+
+/* =========================================
+   EDUCATION
+   ========================================= */
+
+.credential-item {
+
+  margin-bottom: 30px;
+
+}
+
+
+.credential-item:last-child {
+
+  margin-bottom: 0;
+
+}
+
+
+.credential-item h3 {
+
+  margin:
+    0
+    0
+    4px;
+
+  color: #ffffff;
+
+  font-size: 1rem;
+
+  line-height: 1.35;
+
+}
+
+
+.credential-item p {
+
+  margin:
+    0
+    0
+    5px;
+
+  color: #ffffff;
+
+  font-size: 0.9rem;
+
+  line-height: 1.45;
+
+}
+
+
+.credential-item span {
+
+  display: block;
+
+  color: #b9ddd5;
+
+  font-size: 0.78rem;
+
+  line-height: 1.5;
+
+}
+
+
+/* =========================================
+   CERTIFICATIONS
+   ========================================= */
+
+.certification-list {
+
+  display: flex;
+
+  flex-direction: column;
+
+}
+
+
+.certification-item {
+
+  padding:
+    0
+    0
+    14px;
+
+  margin-bottom: 14px;
+
+  border-bottom:
+    1px
+    solid
+    rgba(255, 255, 255, 0.13);
+
+}
+
+
+.certification-item:last-child {
+
+  margin-bottom: 0;
+
+  padding-bottom: 0;
+
+  border-bottom: none;
+
+}
+
+
+.certification-item strong {
+
+  display: block;
+
+  color: #ffffff;
+
+  font-size: 0.88rem;
+
+  line-height: 1.4;
+
+}
+
+
+.certification-item span {
+
+  display: block;
+
+  margin-top: 3px;
+
+  color: #b9ddd5;
+
+  font-size: 0.75rem;
+
+}
+
+
+/* =========================================
+   DIRECTOR SECTION - TABLET
+   ========================================= */
+
+@media (max-width: 950px) {
+
+  .director-wrap {
+
+    grid-template-columns:
+      1fr
+      1fr;
+
+  }
+
+
+  .director-profile {
+
+    grid-column:
+      1 / -1;
+
+    display: grid;
+
+    grid-template-columns:
+      auto
+      1fr;
+
+    gap: 35px;
+
+    align-items: center;
+
+    padding:
+      0
+      0
+      45px;
+
+    margin-bottom: 45px;
+
+    border-bottom:
+      1px
+      solid
+      rgba(255, 255, 255, 0.22);
+
+  }
+
+
+  .director-photo {
+
+    margin-bottom: 0;
+
+  }
+
+
+  .director-column:nth-child(2) {
+
+    padding-left: 0;
+
+    border-left: none;
+
+  }
+
+}
+
+
+/* =========================================
+   DIRECTOR SECTION - MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+  .director-section {
+
+    padding:
+      55px
+      24px;
+
+  }
+
+
+  .director-wrap {
+
+    display: block;
+
+  }
+
+
+  .director-column {
+
+    width: 100%;
+
+    padding:
+      35px
+      0;
+
+  }
+
+
+  .director-column + .director-column {
+
+    border-left: none;
+
+    border-top:
+      1px
+      solid
+      rgba(255, 255, 255, 0.22);
+
+  }
+
+
+  .director-profile {
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    grid-column: auto;
+
+    gap: 0;
+
+    margin: 0;
+
+    padding:
+      0
+      0
+      40px;
+
+    text-align: center;
+
+    border-bottom: none;
+
+  }
+
+
+  .director-photo {
+
+    margin-bottom: 24px;
+
+  }
+
+
+  .director-photo img {
+
+    width: 145px;
+
+    height: 145px;
+
+  }
+
+
+  .director-info h2 {
+
+    font-size: 2.8rem;
+
+  }
+
+
+  .director-contact {
+
+    width: fit-content;
+
+    margin: 0 auto;
+
+    text-align: left;
+
+  }
+
+
+  .credentials-column {
+
+    text-align: left;
+
+  }
+
 }
 
 
