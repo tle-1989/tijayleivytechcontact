@@ -1142,7 +1142,7 @@ footer {
 
   justify-content: center;
 
-  background: transparent;
+  background: #ffffff;
 
 }
 
@@ -1305,6 +1305,7 @@ footer {
 
     padding: 8px;
 
+   background: #ffffff;
   }
 
 
