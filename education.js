@@ -53,6 +53,17 @@ const strengthButton = document.getElementById('strength-calculate');
 function displayStrength(tier, message) {
   strengthTier.textContent = tier;
   strengthDescription.textContent = message;
+  tier.classList.remove(
+  "tier-beginner",
+  "tier-novice",
+  "tier-intermediate",
+  "tier-advanced",
+  "tier-elite"
+);
+
+const tierClass = "tier-" + tierName.toLowerCase();
+
+tier.classList.add(tierClass);
 }
 
 // These boundaries are the site's clearly disclosed percentile categories, not FitnessVolt's own tier labels.
