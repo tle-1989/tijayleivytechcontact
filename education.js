@@ -51,19 +51,33 @@ const strengthDescription = document.getElementById('strength-description');
 const strengthButton = document.getElementById('strength-calculate');
 
 function displayStrength(tier, message) {
+
+  // Update the displayed ranking and description
   strengthTier.textContent = tier;
   strengthDescription.textContent = message;
-  tier.classList.remove(
-  "tier-beginner",
-  "tier-novice",
-  "tier-intermediate",
-  "tier-advanced",
-  "tier-elite"
-);
 
-const tierClass = "tier-" + tierName.toLowerCase();
+  // Remove previous tier colors
+  strengthTier.classList.remove(
+    "tier-beginner",
+    "tier-novice",
+    "tier-intermediate",
+    "tier-advanced",
+    "tier-elite"
+  );
 
-tier.classList.add(tierClass);
+  // Determine the correct color class
+  const tierColors = {
+    "Beginner": "tier-beginner",
+    "Novice": "tier-novice",
+    "Intermediate": "tier-intermediate",
+    "Advanced": "tier-advanced",
+    "Elite": "tier-elite"
+  };
+
+  // Apply the color only when a valid tier is returned
+  if (tierColors[tier]) {
+    strengthTier.classList.add(tierColors[tier]);
+  }
 }
 
 // These boundaries are the site's clearly disclosed percentile categories, not FitnessVolt's own tier labels.
