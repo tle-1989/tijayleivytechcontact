@@ -5,3 +5,24 @@
 .hero-title{padding-top:26px}
 .quick a:focus-visible,.tabs button:focus-visible,button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #8dc63f;outline-offset:3px}
 @media(max-width:540px){.pack{height:165px;background-size:auto 165px;background-position:center top}}
+/* Strength tier result colors */
+
+#strength-tier.tier-beginner {
+  color: #FF873E;
+}
+
+#strength-tier.tier-novice {
+  color: #F6C344;
+}
+
+#strength-tier.tier-intermediate {
+  color: #369D77;
+}
+
+#strength-tier.tier-advanced {
+  color: #397FC7;
+}
+
+#strength-tier.tier-elite {
+  color: #8D5AC0;
+}
